@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: #ffc74c;
+        }
+
+        /* 
+        .container {
+            display: flex;
+            justify-content: center;
+
+        } */
+        .container {
+            text-align: center;
+            padding-top: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <img class="photo" src="1.jpg" width=100px onmouseover="clearInterval(timer)" onmouseout="keepMoving()">
+        <img class="photo" src="1.jpg" width=100px onmouseover="clearInterval(timer)" onmouseout="keepMoving()">
+        <img class="photo" src="1.jpg" width=100px onmouseover="clearInterval(timer)" onmouseout="keepMoving()">
+        <img class="photo" src="1.jpg" width=100px onmouseover="clearInterval(timer)" onmouseout="keepMoving()">
+        <img class="photo" src="1.jpg" width=100px onmouseover="clearInterval(timer)" onmouseout="keepMoving()">
+
+    </div>
+    <script>
+        // var photos = document.getElementsByClassName("photo")[0];
+        // var allPhotos = [document.getElementsByClassName("photo")[0], document.getElementsByClassName("photo")[1], document.getElementsByClassName("photo")[2],
+        // document.getElementsByClassName("photo")[3], document.getElementsByClassName("photo")[4]];
+
+
+
+
+        var i = 0;
+        var previousPhoto;
+        var currentPhoto;
+        // var nextPhoto;
+        var lastPhoto;
+        var timer;
+        function keepMoving() {
+            timer = setInterval(function () {
+                // if (i == 0) {
+                //     // currentPhoto = document.getElementsByClassName("photo")[i];
+                //     // currentPhoto.src = "6.jpg";
+                //     // i++
+                // } else {
+                // currentPhoto = document.getElementsByClassName("photo")[i];
+                // previousPhoto = document.getElementsByClassName("photo")[i - 1];
+                // currentPhoto.src = "1.jpg";
+                // nextPhoto.src = "6.jpg";
+
+                currentPhoto = document.getElementsByClassName("photo")[i];
+                previousPhoto = document.getElementsByClassName("photo")[i - 1];
+                lastPhoto = document.getElementsByClassName("photo")[4];
+                if (i == 0) {
+                    currentPhoto.src = "6.jpg";
+                } else if (i > 4) {
+                    i = 0;
+                    lastPhoto.src = "1.jpg";
+                    currentPhoto.src = "6.jpg";
+
+
+
+                } else {
+                    currentPhoto.src = "6.jpg";
+                    previousPhoto.src = "1.jpg";
+                }
+
+                i++;
+
+                // }
+
+
+            }, 700);
+        }
+    </script>
+</body>
+
+</html>
